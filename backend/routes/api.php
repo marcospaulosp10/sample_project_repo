@@ -32,9 +32,9 @@ Route::group([
     Route::get('users', [UserController::class,'index']);
     Route::post('logout', [AuthController::class, 'logout']);
     Route::get('books', [BooksController::class,'index']);
+    Route::post('books/add', [BooksController::class,'store']);
+    Route::put('checkbook', [BooksController::class,'checkBook']);
 });
 
-Route::post('books/add', [BooksController::class,'store']);
-Route::put('checkbook', [BooksController::class,'checkBook']);
 Route::post('register', [UserController::class,'store']);
 Route::post('login', [AuthController::class, 'login']);
